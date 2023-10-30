@@ -4,6 +4,7 @@ extern crate libc;
 use libc::c_float;
 
 extern "C" {
+    #[link_name = "srotg$NEWLAPACK"]
     pub fn srotg(a: *mut c_float, b: *mut c_float, c: *mut c_float, s: *mut c_float);
 }
 

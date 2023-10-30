@@ -4,7 +4,7 @@ extern crate libc;
 use libc::c_float;
 
 extern "C" {
-    pub fn srotg_(a: *mut c_float, b: *mut c_float, c: *mut c_float, s: *mut c_float);
+    pub fn srotg(a: *mut c_float, b: *mut c_float, c: *mut c_float, s: *mut c_float);
 }
 
 #[test]
@@ -14,7 +14,7 @@ fn link() {
         let mut b: f32 = 0.0;
         let mut c: f32 = 42.0;
         let mut d: f32 = 42.0;
-        srotg_(
+        srotg(
             &mut a as *mut _,
             &mut b as *mut _,
             &mut c as *mut _,
